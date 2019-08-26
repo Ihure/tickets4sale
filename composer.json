@@ -1,6 +1,7 @@
 {
-    "name": "Tickets For Sale",
-    "description":"a simple ticket inventory Demo app",
+    "name": "slim/slim-skeleton",
+    "description": "A Slim Framework skeleton application for rapid development",
+    "keywords": ["Tickets4Sale", "rest", "ihure", "tunga"],
     "authors": [
         {
             "name": "Chris Ihure",
@@ -21,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
