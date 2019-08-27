@@ -7,7 +7,7 @@ return [
         'db' => [
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'pmaskfk',
+            'database' => 'tickets4sale',
             'username' => 'root',
             'password' => 'K@12Pm@$18!!',
             'charset'   => 'utf8',
