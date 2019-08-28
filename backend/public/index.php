@@ -20,16 +20,16 @@ $settings = require __DIR__ . '/../app/config/settings.php';
 $app = new \Slim\App($settings);
 
 // Set up dependencies
-require __DIR__ . '/../app/config/dependencies.php';
+$dependencies = require __DIR__ . '/../app/config/dependencies.php';;
+$dependencies($app);
 
 // Register middleware
-require __DIR__ . '/../app/config/middleware.php';
-
-// Register base Controller
-// require __DIR__ . '/../app/config/baseController.php';
+$middleware = require __DIR__ . '/../app/config/middleware.php';
+$middleware($app);
 
 // Register routes
-require __DIR__ . '/../app/config/routes.php';
+$routes = require __DIR__ . '/../app/config/routes.php';
+$routes($app);
 
 // Run app
 $app->run();
