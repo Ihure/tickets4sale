@@ -24,8 +24,8 @@ export class TicketStatusComponent {
     const showDate = this.datePipe.transform(date, 'yyyy-MM-dd');
     const queryDate = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
 
-    // this.ticketsService.getTicketStatus(showDate, queryDate).subscribe(shows => {
-    this.ticketsService.getTicketStatus('2017-08-15', '2017-08-01').subscribe(shows => {
+    this.ticketsService.getTicketStatus(showDate, queryDate).subscribe(shows => {
+    // this.ticketsService.getTicketStatus('2017-08-15', '2017-08-01').subscribe(shows => {
       this.itemsArray = shows;
       this.grouped = this.itemsArray.reduce(function (r, a) {
         r[a.genre] = r[a.genre] || [];
