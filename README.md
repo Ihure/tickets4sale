@@ -101,6 +101,6 @@ The app will be available at `http://localhost:4200/` browse to this page
 You will have the option to enter the date submit and you'll get results
 such as those below
 
-[[https://github.com/Ihure/tickets4sale/blob/master/frontend/sc2.PNG|alt=octocat]]
+![alt text](https://github.com/Ihure/tickets4sale/blob/master/frontend/sc2.PNG)
 
 the query date will be day of querying
