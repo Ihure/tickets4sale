@@ -30,7 +30,7 @@ $app->post('/inventory/checkInventory', function ($request, $response) {
 
     $data = inventory\processShows::getAvailableTickets($shows,$input['show_date'],$input['query_date']);
 
-    $response = $web == 1 ? inventory\processShows::group_by_web($data): inventory\processShows::group_by_rest($data);
+    $response = $web == 1 ? $data : inventory\processShows::group_by_rest($data);
 
     return $this->response->withJson($response);
 });

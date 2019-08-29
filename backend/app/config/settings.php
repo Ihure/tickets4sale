@@ -9,7 +9,7 @@ return [
             'host' => 'localhost',
             'database' => 'tickets4sale',
             'username' => 'root',
-            'password' => 'K@12Pm@$18!!',
+            'password' => 'password',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
