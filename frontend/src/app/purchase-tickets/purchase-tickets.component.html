@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-6">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Show Date" [value]="date.value" #showDate>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button (click)="checkStatus(showDate.value);">
+      Check Available Tickets
+    </button>
+  </div>
+</div>
+
+<div class="row" style="padding-top: 3em; padding-bottom: 3em" >
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Tickets Left</th>
+        <th>Tickets Available</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th>No of Tickets</th>
+        <th>Buy</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let item of grouped | keyvalue">
+        <tr>
+          <th colspan="8"><span><b>{{item.key}}</b></span></th>
+        </tr>
+        <tr *ngFor="let item of item.value; let i = index">
+          <td>
+            {{item.title}}
+          </td>
+          <td>
+            {{item.tickets_left}}
+          </td>
+          <td>
+            {{item.tickets_available}}
+          </td>
+          <td>
+            {{item.status}}
+          </td>
+          <td>
+            {{item.price}}
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput type="number" placeholder="Ticket number" name="amount" [(ngModel)]="item.amount">
+            </mat-form-field>
+          </td>
+          <td>
+            <button  mat-icon-button
+                     class="btn btn-primary btn-flat btn-addon btn-sm"
+                     style="margin-right: 0.14em;"
+                     (click)="purchase(item, showDate.value)">
+              Purchase
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+</div>

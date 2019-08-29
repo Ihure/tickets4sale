@@ -62,6 +62,44 @@ class processShows {
         return $response;
     }
 
+    public function getTicketsForSale($shows,$showDate, $queryDate){
+
+        $response = [];
+
+        foreach ($shows as $show){
+            $openingDate = strtotime($show['opening_day']);
+            $show_date = strtotime($showDate);
+            $query_date = strtotime($queryDate);
+
+            $runDif = $show_date - $openingDate;
+            $runDay = round($runDif/(60*60*24));
+            $saledif = $show_date - $query_date;
+            $saleDay = round($saledif/(60*60*24));
+
+            if ( $saleDay > 5 && $saleDay < 26){
+
+                $price = $show['price'];
+                $tickets_available = ($runDay < 61) ? 10 - $show['sold'] : 5 - $show['sold'];
+
+                $tickets_left = ($runDay < 61) ? 200 - $show['sold'] - ($tickets_available * (25 - $saleDay - 1)) :
+                    100 - $show['sold'] - ($tickets_available * (25 - $saleDay - 1));
+                $tickets_price = ($runDay < 81) ? $price : 0.8 * $price;
+
+                $response[] =[
+                    'title' => $show['title'],
+                    'id' => $show['id'],
+                    'genre' => $show['genre'],
+                    'tickets_left' => $tickets_left,
+                    'tickets_available' => $tickets_available,
+                    'price' => $tickets_price
+                ];
+            }
+
+        }
+
+        return $response;
+    }
+
     public function group_by_web($data) {
         $key = 'genre';
         $result = array();

@@ -5,4 +5,6 @@ export interface Tickets {
   tickets_available: number;
   status: string;
   price: string;
+  amount: number;
+  id: number;
 }

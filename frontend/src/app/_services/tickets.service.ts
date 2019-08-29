@@ -19,4 +19,20 @@ export class TicketsService {
     });
   }
 
+  getTicket4Sale(sdate, qdate): Observable<Tickets[]> {
+    return this.http.post<Tickets[]>(`${AppSettings.API_ENDPOINT}/inventory/getTickets4Sale`, {
+      show_date: sdate,
+      query_date: qdate
+    });
+  }
+
+  purchaseTickets(sdate, qdate, id, number): Observable<Tickets[]> {
+    return this.http.post<Tickets[]>(`${AppSettings.API_ENDPOINT}/inventory/purchaseTicket`, {
+      show_date: sdate,
+      query_date: qdate,
+      id: id,
+      amount: number
+    });
+  }
+
 }

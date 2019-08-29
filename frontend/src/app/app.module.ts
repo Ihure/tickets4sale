@@ -11,17 +11,26 @@ import { TicketStatusComponent } from './ticket-status/ticket-status.component';
 import {MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule} from '@angular/material';
 import {TicketsService} from './_services';
 import {HttpClientModule} from '@angular/common/http';
+import { PurchaseTicketsComponent } from './purchase-tickets/purchase-tickets.component';
+import {FormsModule} from '@angular/forms';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TicketStatusComponent
+    TicketStatusComponent,
+    PurchaseTicketsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true, }),
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
