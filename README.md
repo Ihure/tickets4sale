@@ -104,3 +104,20 @@ such as those below
 ![alt text](https://github.com/Ihure/tickets4sale/blob/master/frontend/sc2.PNG)
 
 the query date will be day of querying
+
+# Bonus question
+
+* checking available tickets
+
+![alt text](https://github.com/Ihure/tickets4sale/blob/master/frontend/bonus.PNG)
+
+* if more tickets are available
+
+![alt text](https://github.com/Ihure/tickets4sale/blob/master/frontend/bonus_error.PNG)
+
+* when successful
+
+![alt text](https://github.com/Ihure/tickets4sale/blob/master/frontend/bonus_success_notification.PNG)
+
+
+

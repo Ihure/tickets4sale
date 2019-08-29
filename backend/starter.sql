@@ -98,6 +98,33 @@ INSERT INTO `ticket_genres` VALUES (1,'musical',70),(2,'comedy',50),(3,'drama',4
 UNLOCK TABLES;
 
 --
+-- Table structure for table `ticket_sales`
+--
+
+DROP TABLE IF EXISTS `ticket_sales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ticket_sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `show_id` int(11) NOT NULL DEFAULT '0',
+  `show_date` date NOT NULL,
+  `tickets_sold` int(11) NOT NULL DEFAULT '0',
+  `date_processed` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ticket_sales`
+--
+
+LOCK TABLES `ticket_sales` WRITE;
+/*!40000 ALTER TABLE `ticket_sales` DISABLE KEYS */;
+INSERT INTO `ticket_sales` VALUES (1,1,'2017-08-15',2,'2019-08-29 17:49:16'),(2,2,'2019-08-29',5,'2019-08-29 17:55:46');
+/*!40000 ALTER TABLE `ticket_sales` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping events for database 'tickets4sale'
 --
 
@@ -114,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-29 18:24:43
+-- Dump completed on 2019-08-29 21:00:19
