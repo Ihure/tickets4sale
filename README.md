@@ -107,7 +107,7 @@ the query date will be day of querying
 
 # Bonus question
 
-* checking available tickets
+* checking available tickets (also notice cats has 3 after purchasing two tickets during test)
 
 ![alt text](https://github.com/Ihure/tickets4sale/blob/master/frontend/bonus.PNG)
 
