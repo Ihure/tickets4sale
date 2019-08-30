@@ -119,5 +119,11 @@ the query date will be day of querying
 
 ![alt text](https://github.com/Ihure/tickets4sale/blob/master/frontend/bonus_success_notification.PNG)
 
+# Possible improvements
+
+* verify file is csv
+* check input data is valid i.e (show_date is a date and in 'YYYY-mm-dd' format )
+* improved error handling
+* dockerize app for easy containerization and also to improve scalability
 
 
